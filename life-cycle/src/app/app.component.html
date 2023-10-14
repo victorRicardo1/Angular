@@ -13,3 +13,9 @@
 
 <!--Two way data binding-->
 <first-component></first-component>
+
+<!--Ta imputando algo, logo esta mudando no onChange-->
+
+<!--NgIf verifica se algum conteudo deveria ser exibiod, por padrao exibe true-->
+<app-title-component *ngIf="isAlive"></app-title-component>
+<button  *ngIf="disposeExibe" (click)="disposeTitle()">Destruir</button>

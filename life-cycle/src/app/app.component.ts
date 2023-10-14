@@ -11,4 +11,12 @@ export class AppComponent {
   nameBtn = 'Carrinho';
   email = 'email';
   servicos: string[] = ['Comprar', 'Vender'];
+
+  isAlive:boolean = true;
+  disposeExibe: boolean = true;
+
+  disposeTitle(){
+    this.isAlive = false;
+    this.disposeExibe = false;
+  }
 }
