@@ -1,0 +1,35 @@
+
+<!--O NgClass muda o estilo de algo dinamicamente-->
+
+<p [ngClass]="estilo">comp-atributes works!</p>
+<button (click)="mudarCor()">Mudar cor</button>
+
+<!--Podemos colocar elementos CSS no ngStyle-->
+
+<h1 [ngStyle]="{'background':corFundo, 'color': corFonte}">CURSO ANGULAR</h1>
+
+<!--NgModel é do modulo forms e vincula elementos de formulário aos dados do componente. Cria uma ligação bidirecional entre o valor de um elemento de formulário e uma propriedade no componente-->
+
+<!--[()] é a notação usada-->
+
+<h1>Lista de compras</h1>
+<p>Adicione um item</p>
+<input type="text" [(ngModel)]="item">
+<button (click)="adicionarLista()">Adicionar</button>
+<p [ngStyle]="{'color': corFundo}">{{item}}</p>
+
+<ul>
+    <li *ngFor="let elemento of lista">{{elemento}}</li>
+</ul>
+<hr>
+
+<!--NgTemplate é um molde que não vai aparecer pois será false, mas quando true será mostrado na tela o que está no bloco template-->
+
+<ng-template [ngIf]="true">
+    <a href="#">Finalizar compra</a>
+</ng-template>
+
+<!--Ngcontent permite que um component pai passe um conteudo pro component filho e voce consiga rearranjar dinamicamente-->
+<!--O h2 e o p foram criados no app html-->
+<ng-content select="h2"></ng-content>
+<ng-content select="p"></ng-content>

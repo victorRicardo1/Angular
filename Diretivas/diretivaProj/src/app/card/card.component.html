@@ -1,0 +1,59 @@
+<!--Diretivas estuturais-->
+
+<!--
+NgIf que vai esconder so um elemento do nosso component
+-->
+
+<p>card works!</p>
+<h1 *ngIf="aparece; else anotherBlock">My app</h1>
+<button (click)="desaparecer()">...</button>
+
+<!--ng template é um bloco condicional a nivel de estrutura de DOM, criamos um bloco condicional que sera exibido se alguma condição for atendida-->
+
+<!--Acima diz: se não estiver sendo exibido ele vai exibir o template anotherblock-->
+<ng-template #anotherBlock>
+    <p>Ola sou um bloco</p>
+  </ng-template>
+
+<!-- ngFor cria repetiçoes em um template, permitindo que voce itere sobre uma coleção de dados, como um arrray ou lista e renderize conteudo com base nos itens da coleção-->
+
+  <ul>
+    <!--ngFor com index
+        É uma forma de acessar o índice dos itens durante a iteração de uma coleção de dados.
+    -->
+    <li (click)="remover(i)" *ngFor="let p of produtos; let i = index">{{i}} {{p}}</li>
+
+    <!--O for esta conectado ao botao, entao ele reage ao clicarmos o botao, visto que o array produtos esta sofrendo um push graças ao proprio botao-->
+    <button (click)="adicionar()">Adicionar</button>
+  </ul>
+
+  <!--
+    Switch e switch case
+
+    Imagine que tenha uma aplicação com menu dinamico, se um usuario normal logar ele terá algumas opções, se for um admin ele terá mais opções, se for um superuser terá mais ainda.
+    Mesmo component, so mudará o conteúdo
+  -->
+
+  <div [ngSwitch]="menuType">
+    <div *ngSwitchCase="'user'" >
+        <ul>
+            <li>Editar perfil</li>
+            <li>Adicionar cartao</li>
+        </ul>
+    </div>
+    <div *ngSwitchCase="'admin'" >
+        <li>Editar perfil</li>
+        <li>Adicionar cartão</li>
+        <li>Gerenciar usuário</li>
+    </div>
+    <div *ngSwitchCase="'superuser'">
+        <li>Editar perfil</li>
+        <li>Adicionar cartão</li>
+        <li>Gerenciar usuário</li>
+        <li>Gerenciar admins</li>
+    </div>
+    <div *ngSwitchDefault>
+        <li>Editar perfil</li>
+        <li>Adicionar cartao</li>
+    </div>
+  </div>
