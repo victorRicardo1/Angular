@@ -1,0 +1,13 @@
+<div>
+    <ul>
+        <!--Inves de utilizarmos o HREF, podemos mudar a rota dinamicamente sem restartar a aplicação, substituimos href por routerlink-->
+
+        <li><a [routerLink]="['/']" [routerLinkActive]="['activated']"
+                [routerLinkActiveOptions]="{exact: true}">HOME</a></li>
+        <!--O routerLinkActiveOptions faz com que quando a rota for exatamente igual a colocada, tem que fazer o que pede na diretiva routerLinkActive-->
+
+        <!--O routerLinkActive faz com que consigamos associar uma classe css para o link ativo-->
+
+        <li><a [routerLink]="['/portfolio']" [routerLinkActive]="['activated']">PORTFOLIO </a></li>
+    </ul>
+</div>
