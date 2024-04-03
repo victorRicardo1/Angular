@@ -14,8 +14,9 @@
 
 <h1>Lista de compras</h1>
 <p>Adicione um item</p>
-<input type="text" [(ngModel)]="item">
+<input type="text" [(ngModel)]="item" *ngIf="preenchido">
 <button (click)="adicionarLista()">Adicionar</button>
+<button (click)="tentarNovamente()">Tentar novamente,</button>
 <p [ngStyle]="{'color': corFundo}">{{item}}</p>
 
 <ul>

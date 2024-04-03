@@ -8,7 +8,8 @@ import { Component } from '@angular/core';
 export class CardComponent {
   aparece:boolean = true;
   produtos:string[] = []
-  menuType:string = "diretor"
+  menuType:string = "user"
+  itemAdd:string = '';
 
   constructor(){
     this.produtos = [
@@ -25,7 +26,7 @@ export class CardComponent {
   }
 
   adicionar(){
-    this.produtos.push("Richard")
+    this.produtos.push(this.itemAdd)
   }
   remover(index:number){
     this.produtos.splice(index, 1);

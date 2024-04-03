@@ -11,6 +11,7 @@ export class CompAtributesComponent {
   corFonte:string = "blue";
   item:string = ""
   lista:string[] = [];
+  preenchido:Boolean = true;
 
   mudarCor(){
     if(this.estilo === "enable"){
@@ -21,6 +22,14 @@ export class CompAtributesComponent {
   }
 
   adicionarLista(){
-    this.lista.push(this.item);
+    if(this.item === ''){
+      this.preenchido = false;
+    }else{
+      this.lista.push(this.item);
+    }
+  }
+
+  tentarNovamente(){
+    this.preenchido = true;
   }
 }

@@ -24,12 +24,13 @@ NgIf que vai esconder so um elemento do nosso component
     <li (click)="remover(i)" *ngFor="let p of produtos; let i = index">{{i}} {{p}}</li>
 
     <!--O for esta conectado ao botao, entao ele reage ao clicarmos o botao, visto que o array produtos esta sofrendo um push graças ao proprio botao-->
+    <input type="text" placeholder="insira" [(ngModel)]="itemAdd">
     <button (click)="adicionar()">Adicionar</button>
   </ul>
 
   <!--
     Switch e switch case
-
+    
     Imagine que tenha uma aplicação com menu dinamico, se um usuario normal logar ele terá algumas opções, se for um admin ele terá mais opções, se for um superuser terá mais ainda.
     Mesmo component, so mudará o conteúdo
   -->
@@ -57,3 +58,6 @@ NgIf que vai esconder so um elemento do nosso component
         <li>Adicionar cartao</li>
     </div>
   </div>
+
+
+ 
